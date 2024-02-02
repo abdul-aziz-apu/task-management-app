@@ -44,7 +44,7 @@ const initialState = {
             id: nextTodoId(state.todos),
             text: action.payload,
             completed: false,
-            // color: action.payload.color
+            color: 'green'
           }
         ]
       }
