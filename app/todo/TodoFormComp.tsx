@@ -47,7 +47,7 @@ export default function TodoFormComp() {
       const formJson = Object.fromEntries(formData.entries());
   
       // You can pass formData as a fetch body directly:
-      fetch('https://65ba68c2b4d53c066552d578.mockapi.io/api/v1/taskname', { method: form.method, body: formJson });
+      fetch('https://65ba68c2b4d53c066552d578.mockapi.io/api/v1/taskname', { method: form.method, body: formData });
   
 
 
@@ -74,7 +74,7 @@ export default function TodoFormComp() {
           type="text"
           id="completed"
           name="completed"
-          onClick={(event) => setComplete(event.target)}
+          onChange={(event) => setTodo(event.target.value)}
         />
 
         <input
