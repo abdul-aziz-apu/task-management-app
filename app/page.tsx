@@ -1,13 +1,15 @@
 "use client"
 
 import StoreProvider from "./StoreProvider";
-import ProductName from "./product/ProductName";
+import TodoFormComp from "./todo/TodoFormComp";
+import ShowTodos from "./todo/ShowTodos";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
         <StoreProvider>
-          <ProductName/>
+          <TodoFormComp />
+          <ShowTodos />
         </StoreProvider>
     </main>
   );

@@ -53,7 +53,7 @@ const initialState: InitialState = {
             id: nextTodoId(state.todos),
             text: action.payload.text,
             completed: false,
-            color: action.payload.text
+            color: action.payload.color
           }
         ]
       }
