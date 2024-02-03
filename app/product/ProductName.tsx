@@ -10,7 +10,7 @@ interface Todo {
     color: string
   }
 export default function ProductName() {
-    const authState = useAppSelector((state) => state.appReducer.todos);
+    const authState = useAppSelector((state) => state.todos);
     console.log(authState)
 
     return (

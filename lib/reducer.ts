@@ -1,6 +1,21 @@
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-const initialState = {
+export interface Todo {
+  id: number,
+  text: string,
+  completed: Boolean,
+  color: string
+}
+
+export interface InitialState {
+  todos: Array<Todo>,
+  filters: {
+    status: String,
+    colors: String[]
+  }
+}
+
+const initialState: InitialState = {
     todos: [
       { id: 0, text: 'Learn React', completed: true, color: 'green' },
       { id: 1, text: 'Learn Redux', completed: false, color: 'purple' },
@@ -12,20 +27,14 @@ const initialState = {
     }
   }
 
-  interface Todo {
-    id: number,
-    text: string,
-    completed: Boolean,
-    color: string
-  }
-  
+
   function nextTodoId(todos:Array<Todo>) {
     const maxId = todos.reduce((maxId:number, todo:Todo) => Math.max(todo.id, maxId), -1)
     return maxId + 1
   }
 
   // Use the initialState as a default value
-  export default function appReducer(state = initialState, action:PayloadAction<Todo>) {
+  export default function appReducer(state: InitialState = initialState, action:PayloadAction<Todo>): InitialState {
   // The reducer normally looks at the action type field to decide what happens
   switch (action.type) {
     // Do something here based on the different types of actions

@@ -3,9 +3,7 @@ import appReducer from './reducer';
 
 export const makeStore = () => {
     return configureStore({
-        reducer: {
-            appReducer
-        }
+        reducer: appReducer
     })
 }
 
